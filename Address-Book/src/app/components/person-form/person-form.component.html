@@ -1,0 +1,56 @@
+<div class="form-container">
+    <div class="form-header">
+        <h2>{{ isEditMode ? 'EDIT PERSON DETAILS' : 'PERSON ADDRESS FORM' }}</h2>
+        <button class="close-btn" (click)="closeForm()">✖</button>
+    </div>
+
+    <form (ngSubmit)="savePerson()">
+        <!-- Full Name -->
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" [(ngModel)]="person.fullName" name="fullName" required />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" id="phoneNumber" [(ngModel)]="person.phoneNumber" name="phoneNumber" required />
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" [(ngModel)]="person.address" name="address" required />
+        </div>
+
+        <!-- City, State, Zip Code Row -->
+        <div class="form-row">
+            <div class="form-group">
+                <label for="city">City</label>
+                <select id="city" [(ngModel)]="person.city" name="city" required>
+                    <option value="">Select City</option>
+                    <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State</label>
+                <select id="state" [(ngModel)]="person.state" name="state" required>
+                    <option value="">Select State</option>
+                    <option *ngFor="let state of states" [value]="state">{{ state }}</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="zipCode">Zip Code</label>
+                <input type="text" id="zipCode" [(ngModel)]="person.zipCode" name="zipCode" required />
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+            <button type="submit" class="btn-primary">{{ isEditMode ? 'Update' : 'Add' }}</button>
+            <button type="button" class="btn-secondary" (click)="resetForm()">Reset</button>
+        </div>
+    </form>
+</div>

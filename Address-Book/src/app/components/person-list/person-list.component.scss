@@ -1,0 +1,48 @@
+.list-container {
+    max-width: 100%;
+    background-color: WhiteSmoke;
+}
+
+.details{
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.add-btn {
+    margin-bottom: 8px;
+    background-color: DodgerBlue;
+    color: black;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+}
+
+.list{
+    display: flex;
+    justify-content: space-between;
+}
